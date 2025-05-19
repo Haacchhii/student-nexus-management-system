@@ -74,8 +74,9 @@ const generateAttendanceRecords = () => {
       }
 
       // For recent dates, add some missing records (not yet marked)
+      // Using an early return instead of continue
       if (i < 5 && Math.random() > 0.8) {
-        continue; // Skip this record to simulate not yet marked
+        return; // Skip this record to simulate not yet marked
       }
 
       records.push({
@@ -101,8 +102,9 @@ const generateAttendanceRecords = () => {
         status = 'absent';
       }
 
+      // Using an early return instead of continue
       if (i < 5 && Math.random() > 0.8) {
-        continue;
+        return;
       }
 
       records.push({
