@@ -9,6 +9,8 @@ import GradesManagement from "@/components/GradesManagement";
 import FeeManagement from "@/components/FeeManagement";
 import ExamManagement from "@/components/ExamManagement";
 import CollectiveInformation from "@/components/CollectiveInformation";
+import AdmissionRegistration from "@/components/AdmissionRegistration";
+import StaffManagement from "@/components/StaffManagement";
 import { useRole } from "@/contexts/RoleContext";
 
 const Index = () => {
@@ -22,7 +24,9 @@ const Index = () => {
     ];
     
     const adminTabs = [
+      { label: "Admission & Registration", value: "admission" },
       { label: "Student Management", value: "students" },
+      { label: "Staff Management", value: "staff" },
       { label: "Attendance Management", value: "attendance" },
       { label: "Grades Management", value: "grades" },
       { label: "Fee Management", value: "fees" },
@@ -92,8 +96,16 @@ const Index = () => {
             <Dashboard />
           </TabsContent>
           
+          <TabsContent value="admission">
+            <AdmissionRegistration />
+          </TabsContent>
+          
           <TabsContent value="students">
             <StudentManagement />
+          </TabsContent>
+          
+          <TabsContent value="staff">
+            <StaffManagement />
           </TabsContent>
           
           <TabsContent value="attendance">

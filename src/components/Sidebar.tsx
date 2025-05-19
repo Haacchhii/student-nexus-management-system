@@ -1,7 +1,10 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { LucideIcon, Home, Users, Clock, Book, GraduationCap, BookOpen, FileText, PieChart } from "lucide-react";
+import { 
+  LucideIcon, Home, Users, Clock, Book, GraduationCap, 
+  BookOpen, FileText, PieChart, UserPlus 
+} from "lucide-react";
 import { useRole } from "@/contexts/RoleContext";
 import RoleSelector from "./RoleSelector";
 
@@ -45,7 +48,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
     ];
     
     const adminItems = [
+      { icon: UserPlus, label: "Admission & Registration", value: "admission" },
       { icon: Users, label: "Student Management", value: "students" },
+      { icon: Users, label: "Staff Management", value: "staff" },
       { icon: Clock, label: "Attendance Management", value: "attendance" },
       { icon: Book, label: "Grades Management", value: "grades" },
       { icon: FileText, label: "Fee Management", value: "fees" },
